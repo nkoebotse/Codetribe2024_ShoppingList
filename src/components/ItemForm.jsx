@@ -13,7 +13,7 @@ const ItemForm = ({ item, onClose = () => {} }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newItem = { name, quantity, notes, category, id: `${ Date.now() }`};
+    const newItem = { name, quantity, notes, category, id: item ? item.id : `${Date.now()}` };
 
     try {
       if (item) {
@@ -25,7 +25,7 @@ const ItemForm = ({ item, onClose = () => {} }) => {
       }
       onClose();
     } catch (error) {
-      console.error('Error handling item submission:', error);
+      console.error('Error handling item submission:', error.response?.data || error.message);
     }
   };
 
@@ -49,31 +49,31 @@ const ItemForm = ({ item, onClose = () => {} }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        value={name} 
-        onChange={(e) => setName(e.target.value)} 
-        placeholder="Item Name" 
-        required 
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Item Name"
+        required
       />
-      <input 
-        type="number" 
-        value={quantity} 
-        onChange={(e) => setQuantity(e.target.value)} 
-        placeholder="Quantity" 
-        required 
+      <input
+        type="number"
+        value={quantity}
+        onChange={(e) => setQuantity(e.target.value)}
+        placeholder="Quantity"
+        required
       />
-      <input 
-        type="text" 
-        value={notes} 
-        onChange={(e) => setNotes(e.target.value)} 
-        placeholder="Notes" 
+      <input
+        type="text"
+        value={notes}
+        onChange={(e) => setNotes(e.target.value)}
+        placeholder="Notes"
       />
-      <input 
-        type="text" 
-        value={category} 
-        onChange={(e) => setCategory(e.target.value)} 
-        placeholder="Category" 
+      <input
+        type="text"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        placeholder="Category"
       />
       <button type="submit">Save</button>
       <button type="button" onClick={handleShare}>Share Item</button>

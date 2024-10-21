@@ -50,3 +50,22 @@ body {
   background-attachment: fixed;
   background-position: center;
 }
+
+.container-a {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 auto; /* Centers the container horizontally */
+ 
+  align-items: center; /* Centers items horizontally */
+}
+
+.container-b {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Use full width of the container */
+
+}
+.item_login{
+  padding-left: 30px;
+}
