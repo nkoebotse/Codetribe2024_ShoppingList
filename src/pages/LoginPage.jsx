@@ -30,7 +30,7 @@ function LoginPage() {
   };
 
   return (
-    <div className="container-a">
+    <div className="container-b">
       <h2 className="container-b">Login</h2>
       <form onSubmit={handleLogin}>
         <input

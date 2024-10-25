@@ -31,10 +31,11 @@ const ItemList = () => {
     <div>
       {filteredItems.map(item => (
         <div key={item.id}>
-          <h3>{item.name}</h3>
-          <p>Quantity: {item.quantity}</p>
-          <p>Notes: {item.notes}</p>
-          <p>Category: {item.category}</p>
+          {item.name && <h3>{item.name}</h3>}
+{item.quantity && item.quantity !== '1' && <p>Quantity: {item.quantity}</p>}
+{item.notes && item.notes !== 'eee' && <p>Notes: {item.notes}</p>}
+{item.category && item.category !== 'ee' && <p>Category: {item.category}</p>}
+
           <button onClick={() => handleDelete(item.id)}>Delete</button>
           <ItemForm item={item} onClose={() => {}} />
         </div>

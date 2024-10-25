@@ -19,11 +19,10 @@ const SearchFilter = () => {
   };
 
   return (
-    <div>
+    <div className="filter-container">
       <input type="text" onChange={handleSearchChange} placeholder="Search items" />
       <select onChange={handleSortChange}>
         <option value="name">Sort by Name</option>
-        <option value="category">Sort by Category</option>
       </select>
       <select onChange={handleCategoryChange}>
         <option value="">All Categories</option>

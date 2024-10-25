@@ -27,7 +27,7 @@ function RegistrationPage() {
   };
 
   return (
-    <div className="container-a">
+    <div className="container-b">
       <h2 className="container-b">Register</h2>
       <form onSubmit={handleRegister}>
         <input
